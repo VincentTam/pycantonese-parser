@@ -2,9 +2,18 @@ PyCantonese Parser
 ===
 
 A Typst package to render Cantonese text with Jyutping (粵拼) from "Cantonese
-words JSON array" generated from this python script.
+words JSON array" generated from the python script below.
 
 ![package output](pycanto_parser.png)
+
+Prerequisites
+---
+
+[PyCantonese](https://pycantonese.org) must be installed in your Python environment:
+
+```bash
+pip install pycantonese
+```
 
 ```py
 import pycantonese
@@ -24,7 +33,7 @@ for word in words:
 print(json.dumps(result, ensure_ascii=False, indent=2))
 ```
 
-This script takes a Chinese string as the user input, and output it as a JSON
+This script takes a Chinese string as the user input, and outputs it as a JSON
 array of "Cantonese word groups objects", which is a JSON object with
 
 - `word`: the word group
@@ -34,7 +43,8 @@ Usage
 ---
 
 1. Save the above python script (as `test_pycanto.py`).
-1. Run `python test_pycanto.py "[YOUR_TEXT]" > [OUTPUT_FILENAME]`.
+1. Run `python test_pycanto.py "[YOUR_TEXT]" > [OUTPUT_FILENAME]` to save the
+script's output.
 
     ```sh
     $ python test_pycanto.py "撩稜嘅字，就算係" > output.json
